@@ -1,11 +1,10 @@
-package io.github.pablitohaddad.msnotification.entities;
+package io.github.pablitohaddad.msnotification.dto;
 
 import io.github.pablitohaddad.msnotification.enums.Events;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
@@ -13,8 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "notifications")
-public class UserNotification {
-    private ObjectId id; // toHexString
+public class UserNotificationDTO {
     private String email;
     private Events event;
     private String date;
