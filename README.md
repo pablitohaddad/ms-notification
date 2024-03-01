@@ -13,7 +13,8 @@ Bem-vindo à API de Notification, uma solução robusta desenvolvida em Spring B
 ## Requisitos
  
 - Java 17 
-- MongoDB
+- MySql Database
+- RabbitMQ
 - Spring Boot
  
 ## Configuração
@@ -64,4 +65,4 @@ mvn spring-boot:run
 
 ### Dificuldades.
 
-As únicas dificuldades foram os testes, aos quais não consegui dar início. Entretando, foi uma tarefa tranquila usar o mongodb para o serviço de mensageria.
+As únicas dificuldades foram os testes, aos quais não consegui dar início. Entretando, foi uma tarefa tranquila usar o rabbitmq para a mensageria.
