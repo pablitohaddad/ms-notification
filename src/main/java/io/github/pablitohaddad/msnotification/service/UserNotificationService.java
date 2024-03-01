@@ -23,7 +23,7 @@ public class UserNotificationService {
                     .writerWithDefaultPrettyPrinter()
                     .writeValueAsString(UserNotificationMapper.toDTO(userNotification)));
         }catch (JsonProcessingException e){
-            e.printStackTrace();
+            throw new RuntimeException("Failed Json Processing");
         }
     }
 }

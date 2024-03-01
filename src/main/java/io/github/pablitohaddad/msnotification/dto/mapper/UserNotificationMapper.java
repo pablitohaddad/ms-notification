@@ -11,10 +11,4 @@ public class UserNotificationMapper{
         ModelMapper mapper = new ModelMapper();
         return mapper.map(user, UserNotificationDTO.class);
     }
-
-    public static void toUser(UserNotificationDTO dto) {
-        ModelMapper mapper = new ModelMapper();
-        mapper.map(dto, UserNotification.class);
-    }
-
 }

@@ -2,6 +2,7 @@ package io.github.pablitohaddad.msnotification.config;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.pablitohaddad.msnotification.exceptions.MessageFailingException;
 import io.github.pablitohaddad.msnotification.service.UserNotificationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -13,10 +14,8 @@ public class MQConfig {
     private final UserNotificationService userNotificationService;
     @RabbitListener(queues = "${mq.queues.msnotification}")
     public void receiveMessage(String message) {
-        try {
-            userNotificationService.messageTransform(message);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        if (message.isEmpty() || message.isBlank())
+            throw new MessageFailingException("Fail Message");
+        userNotificationService.messageTransform(message);
     }
 }

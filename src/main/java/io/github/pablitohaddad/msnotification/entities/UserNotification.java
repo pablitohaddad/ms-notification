@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Document(collection = "notifications")
 public class UserNotification {
-    private ObjectId id; // toHexString
+    private ObjectId id;
     private String email;
     private Events event;
     private String date;
